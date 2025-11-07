@@ -44,12 +44,21 @@ function App() {
 
       <div>
         {
+
           languages.map(language => (
             <button className='btn btn-primary m-5 text-align-center' key={language.id}>{language.title}</button>
           ))
-        }
-      </div>
 
+        }
+        {
+          languages.map(language => (
+            <div className='card'>
+              <div className='card-body'>{language.description}</div>
+            </div>
+          ))
+        }
+
+      </div>
 
 
 
