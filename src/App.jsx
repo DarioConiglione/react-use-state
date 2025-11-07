@@ -38,6 +38,8 @@ function App() {
     }
   ];
 
+  const [ilValoreCorrente, setIlValoreCorrente] = useState(null);
+
 
   return (
     <>
@@ -46,17 +48,31 @@ function App() {
         {
 
           languages.map(language => (
-            <button className='btn btn-primary m-5 text-align-center' key={language.id}>{language.title}</button>
+            <button onClick={() => setIlValoreCorrente(language)} className='btn btn-primary m-5 text-align-center' key={language.id}>{language.title}</button>
           ))
 
         }
+
+
         {
-          languages.map(language => (
+          ilValoreCorrente && (
+            <div className="card mt-4 mx-auto">
+              <div className="card-body">
+                <p className="card-text">{ilValoreCorrente.description}</p>
+              </div>
+            </div>
+          )}
+
+
+
+        { /* languages.map(language => (
             <div className='card'>
               <div className='card-body'>{language.description}</div>
             </div>
-          ))
-        }
+          )) */}
+
+
+
 
       </div>
 
